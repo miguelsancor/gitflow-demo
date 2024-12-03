@@ -86,7 +86,7 @@ git push -u origin develop
    echo form { border: 1px solid #ccc; padding: 15px; width: 300px; } >> login.html
    echo ^</style^> >> login.html
 
-   ```bash
+   
    git add login.html
    git commit -m "style: add basic styles for login page"
    ```
