@@ -53,7 +53,7 @@ git push -u origin develop
 
 2. Crea un archivo básico `login.html`:
    ```bash
- __________________________________________  
+ 
    echo "<!DOCTYPE html>
 <html>
 <head>
@@ -70,8 +70,6 @@ git push -u origin develop
     </form>
 </body>
 </html>" > login.html
-
-__________________________________________________________
    ```
 
 3. Agrega y confirma los cambios:
