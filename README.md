@@ -78,11 +78,15 @@ git push -u origin develop
    ```
 
 4. Mejora el diseño con estilos básicos:
+
+   En **Windows (cmd):**
+   ```cmd
+   echo ^<style^> >> login.html
+   echo body { font-family: Arial, sans-serif; margin: 20px; } >> login.html
+   echo form { border: 1px solid #ccc; padding: 15px; width: 300px; } >> login.html
+   echo ^</style^> >> login.html
+
    ```bash
-   echo "<style>
-body { font-family: Arial, sans-serif; margin: 20px; }
-form { border: 1px solid #ccc; padding: 15px; width: 300px; }
-</style>" >> login.html
    git add login.html
    git commit -m "style: add basic styles for login page"
    ```
