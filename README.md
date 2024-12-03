@@ -51,26 +51,25 @@ git push -u origin develop
    git flow feature start add-login-page
    ```
 
-2. Crea un archivo básico `login.html`:
-   ```bash
- 
-   echo "<!DOCTYPE html>
-<html>
-<head>
-    <title>Login Page</title>
-</head>
-<body>
-    <h1>Welcome to the Login Page</h1>
-    <form>
-        <label for='username'>Username:</label>
-        <input type='text' id='username' name='username'><br><br>
-        <label for='password'>Password:</label>
-        <input type='password' id='password' name='password'><br><br>
-        <button type='submit'>Login</button>
-    </form>
-</body>
-</html>" > login.html
-   ```
+2. Crea un archivo básico `login.html` usando este comando:
+   En **Windows (cmd):**
+   ```cmd
+   echo ^<DOCTYPE html^> > login.html
+   echo ^<html^> >> login.html
+   echo ^<head^> >> login.html
+   echo    ^<title^>Login Page^</title^> >> login.html
+   echo ^</head^> >> login.html
+   echo ^<body^> >> login.html
+   echo    ^<h1^>Welcome to the Login Page^</h1^> >> login.html
+   echo    ^<form^> >> login.html
+   echo        ^<label for='username'^>Username:^</label^> >> login.html
+   echo        ^<input type='text' id='username' name='username'^>^<br^>^<br^> >> login.html
+   echo        ^<label for='password'^>Password:^</label^> >> login.html
+   echo        ^<input type='password' id='password' name='password'^>^<br^>^<br^> >> login.html
+   echo        ^<button type='submit'^>Login^</button^> >> login.html
+   echo    ^</form^> >> login.html
+   echo ^</body^> >> login.html
+   echo ^</html^> >> login.html
 
 3. Agrega y confirma los cambios:
    ```bash
