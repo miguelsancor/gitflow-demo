@@ -46,56 +46,55 @@ git push -u origin develop
 ## **2. Ciclo de Vida de un Cambio**
 
 ### **Ambiente: DEV**
-1. Crea una rama `feature` para desarrollar una nueva funcionalidad:
-   ```bash
-   git flow feature start add-login-page
-   ```
+#### Paso 1: Crear una rama `feature`
+```bash
+git flow feature start add-login-page
+```
 
-2. Crea un archivo básico `login.html` usando este comando:
-   En **Windows (cmd):**
-   ```cmd
-   echo ^<DOCTYPE html^> > login.html
-   echo ^<html^> >> login.html
-   echo ^<head^> >> login.html
-   echo    ^<title^>Login Page^</title^> >> login.html
-   echo ^</head^> >> login.html
-   echo ^<body^> >> login.html
-   echo    ^<h1^>Welcome to the Login Page^</h1^> >> login.html
-   echo    ^<form^> >> login.html
-   echo        ^<label for='username'^>Username:^</label^> >> login.html
-   echo        ^<input type='text' id='username' name='username'^>^<br^>^<br^> >> login.html
-   echo        ^<label for='password'^>Password:^</label^> >> login.html
-   echo        ^<input type='password' id='password' name='password'^>^<br^>^<br^> >> login.html
-   echo        ^<button type='submit'^>Login^</button^> >> login.html
-   echo    ^</form^> >> login.html
-   echo ^</body^> >> login.html
-   echo ^</html^> >> login.html
+#### Paso 2: Crear un archivo básico `login.html`
+En **Windows (cmd)**:
+```cmd
+echo ^<DOCTYPE html^> > login.html
+echo ^<html^> >> login.html
+echo ^<head^> >> login.html
+echo    ^<title^>Login Page^</title^> >> login.html
+echo ^</head^> >> login.html
+echo ^<body^> >> login.html
+echo    ^<h1^>Welcome to the Login Page^</h1^> >> login.html
+echo    ^<form^> >> login.html
+echo        ^<label for='username'^>Username:^</label^> >> login.html
+echo        ^<input type='text' id='username' name='username'^>^<br^>^<br^> >> login.html
+echo        ^<label for='password'^>Password:^</label^> >> login.html
+echo        ^<input type='password' id='password' name='password'^>^<br^>^<br^> >> login.html
+echo        ^<button type='submit'^>Login^</button^> >> login.html
+echo    ^</form^> >> login.html
+echo ^</body^> >> login.html
+echo ^</html^> >> login.html
+```
 
-3. Agrega y confirma los cambios:
-   ```bash
-   git add login.html
-   git commit -m "feat: add basic login page"
-   ```
+#### Paso 3: Agregar y confirmar los cambios
+```bash
+git add login.html
+git commit -m "feat: add basic login page"
+```
 
-4. Mejora el diseño con estilos básicos:
+#### Paso 4: Mejora el diseño con estilos básicos
+En **Windows (cmd)**:
+```cmd
+echo ^<style^> >> login.html
+echo body { font-family: Arial, sans-serif; margin: 20px; } >> login.html
+echo form { border: 1px solid #ccc; padding: 15px; width: 300px; } >> login.html
+echo ^</style^> >> login.html
 
-   En **Windows (cmd):**
-   ```cmd
-   echo ^<style^> >> login.html
-   echo body { font-family: Arial, sans-serif; margin: 20px; } >> login.html
-   echo form { border: 1px solid #ccc; padding: 15px; width: 300px; } >> login.html
-   echo ^</style^> >> login.html
+git add login.html
+git commit -m "style: add basic styles for login page"
+```
 
-   
-   git add login.html
-   git commit -m "style: add basic styles for login page"
-   ```
-
-5. Finaliza la rama `feature` y fusiónala en `develop`:
-   ```bash
-   git flow feature finish add-login-page
-   git push origin develop
-   ```
+#### Paso 5: Finaliza la rama `feature`
+```bash
+git flow feature finish add-login-page
+git push origin develop
+```
 
 ---
 
