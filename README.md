@@ -11,6 +11,7 @@ Este repositorio muestra un caso práctico completo de GitFlow, desde la creaci�
    - **MacOS**: `brew install git-flow`
 2. Tener una cuenta en [GitHub](https://github.com/).
 3. Un editor de texto como Visual Studio Code o cualquier IDE de tu preferencia.
+4. Tener Docker instalado y configurado en tu máquina local.
 
 ---
 
@@ -51,7 +52,7 @@ git push -u origin develop
 git flow feature start add-login-page
 ```
 
-#### Paso 2: Crear un archivo básico `login.html`
+#### Paso 2: Crear el archivo `login.html`
 En **Windows (cmd)**:
 ```cmd
 echo ^<DOCTYPE html^> > login.html
@@ -72,13 +73,13 @@ echo ^</body^> >> login.html
 echo ^</html^> >> login.html
 ```
 
-#### Paso 3: Agregar y confirmar los cambios
+#### Paso 3: Agregar y confirmar cambios
 ```bash
 git add login.html
 git commit -m "feat: add basic login page"
 ```
 
-#### Paso 4: Mejora el diseño con estilos básicos
+#### Paso 4: Mejorar el diseño con estilos básicos
 En **Windows (cmd)**:
 ```cmd
 echo ^<style^> >> login.html
@@ -90,7 +91,7 @@ git add login.html
 git commit -m "style: add basic styles for login page"
 ```
 
-#### Paso 5: Finaliza la rama `feature`
+#### Paso 5: Finalizar la rama `feature`
 ```bash
 git flow feature finish add-login-page
 git push origin develop
@@ -104,7 +105,7 @@ git push origin develop
    git flow release start v1.0.0
    ```
 
-2. Prepara el archivo para producción:
+2. Realiza ajustes finales:
    ```bash
    echo "<footer>Version 1.0.0</footer>" >> login.html
    git add login.html
@@ -113,7 +114,7 @@ git push origin develop
 
 3. Finaliza la rama `release`:
    ```bash
-   git flow release finish v1.0.0
+   git flow release finish -m "Primera versión estable de la aplicación" v1.0.0
    git push origin master
    git push origin develop
    git push --tags
@@ -127,7 +128,7 @@ git push origin develop
    git flow hotfix start fix-login-bug
    ```
 
-2. Realiza una corrección en el archivo:
+2. Realiza la corrección:
    ```bash
    echo "<!-- Fixed typo in form labels -->" >> login.html
    git add login.html
@@ -136,7 +137,7 @@ git push origin develop
 
 3. Finaliza la rama `hotfix`:
    ```bash
-   git flow hotfix finish fix-login-bug
+   git flow hotfix finish -m "Corrección de errores menores" fix-login-bug
    git push origin master
    git push origin develop
    git push --tags
@@ -144,12 +145,34 @@ git push origin develop
 
 ---
 
-## **3. Automatización con GitHub Actions**
+## **3. Creación del Dockerfile**
 
-1. Crea el archivo de flujo en `.github/workflows/ci.yml`:
+1. Crea un archivo `Dockerfile` en la raíz del proyecto:
+   ```bash
+   echo "FROM python:3.9-slim" > Dockerfile
+   echo "WORKDIR /app" >> Dockerfile
+   echo "COPY login.html /app/" >> Dockerfile
+   echo 'CMD ["echo", "Dockerfile ejecutado correctamente"]' >> Dockerfile
+   ```
+
+2. Agrega y confirma los cambios:
+   ```bash
+   git add Dockerfile
+   git commit -m "chore: add Dockerfile for CI/CD"
+   git push origin develop
+   ```
+
+---
+
+## **4. Automatización con GitHub Actions**
+
+1. Crea un archivo de flujo en `.github/workflows/ci.yml`:
    ```bash
    mkdir -p .github/workflows
-   echo "
+   nano .github/workflows/ci.yml
+   ```
+   Pega el siguiente contenido:
+   ```yaml
    name: CI/CD Pipeline
 
    on:
@@ -175,27 +198,20 @@ git push origin develop
        - name: Run tests
          run: |
            echo 'No tests configured yet'
-   " > .github/workflows/ci.yml
    ```
 
 2. Agrega y confirma los cambios:
    ```bash
    git add .github/workflows/ci.yml
-   git commit -m "ci: add GitHub Actions workflow for Docker build"
+   git commit -m "ci: add GitHub Actions workflow"
    git push origin develop
    ```
 
 ---
 
-## **4. Verificar el Flujo**
+## **5. Verificar el Flujo**
 1. Revisa el historial de ramas (`feature`, `release`, `hotfix`).
 2. Valida los pipelines en la pestaña **Actions** del repositorio en GitHub.
-
----
-
-## **5. Extensiones posibles**
-- Añadir pruebas unitarias.
-- Implementar despliegues automáticos con GitHub Actions.
 
 ---
 
