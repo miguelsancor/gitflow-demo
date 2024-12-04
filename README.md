@@ -1,4 +1,8 @@
 
+# Ciclo de vida construcción de software
+
+<img src="imagenes/devops.png" alt="Descripción" width="900">
+
 # GitFlow Demo
 
 Este repositorio muestra un caso práctico completo de GitFlow, desde la creación del repositorio hasta la implementación de un flujo automatizado con GitHub Actions. Los participantes podrán seguir los pasos copiando y pegando los comandos en su terminal para aprender y practicar.
